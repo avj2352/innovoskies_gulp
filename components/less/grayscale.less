@@ -4,14 +4,19 @@
 body {
     width: 100%;
     height: 100%;
-    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: @light;
     background-color: @dark;
+    background: url(../img/background.png) repeat;
 }
 
 html {
     width: 100%;
     height: 100%;
+}
+
+hr{
+    border-top: 1px solid @gold;
 }
 
 h1,
@@ -30,14 +35,14 @@ h6 {
 
 p {
     margin: 0 0 25px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
 @media(min-width:767px) {
     p {
         margin: 0 0 35px;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1.6;
     }
 }
@@ -240,15 +245,15 @@ a {
 }
 
 .content-section {
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .download-section {
     width: 100%;
-    padding: 50px 0;
+    padding: 10px 0 100px;
     color: @light;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: @dark;
+    // background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    // background-color: @dark;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -263,11 +268,12 @@ a {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
     .download-section {
-        padding: 100px 0;
+        padding: 5px 0 100px;
     }
 
     #map {
@@ -356,3 +362,170 @@ svg path,
 svg rect{
   fill: @gold;
 }
+
+
+
+
+
+/* CSS scripts for Gallery Section */
+.title {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100%;
+    background: url(../img/title_large.png) no-repeat 0px 5px ;
+}
+
+.gallery {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.gallery .sorting {
+    margin: 0px 0px 15px 0px;
+    border: 1px solid @lessGold;
+    background-color: rgba(109,77,46,.3);
+}
+
+.gallery .sorting span{
+    padding: 0px 20px 0px 0px;
+    color: @lessGold;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.gallery .sorting div {
+    /*border: 1px solid white;*/
+    margin: 10px 0px 10px 10px;
+}
+
+/*Styling the sorting links*/
+
+.gallery .sorting a {
+    /*border: 1px solid white;*/
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 3px 20px 3px 20px;
+    background: url(../img/check_normal.gif) no-repeat 0px 7px;
+}
+
+.gallery .sorting a:hover{
+    /*background: url(../img/check_selected.gif) no-repeat 0px 3px;*/
+    color: @brightGold;
+}
+
+.gallery .sorting a.selected {
+    color: @brightGold;
+    background: url(../img/check_selected.gif) no-repeat 0px 7px;
+    }
+
+/*Styling the thumbnail container*/
+
+.gallery .photos .thumbnail_container {
+    /*border: 1px solid white;*/
+    position: relative;
+    /*background: #777; This is to check how much the thumbnail_container sizes*/
+}
+
+.gallery .photos .thumbnail_container a.thumbnail{
+    position: absolute;
+}
+
+.gallery .photos .thumbnail_container a.thumbnail img {
+    width: 75px;
+    height: 75px;
+    border: 1px solid @lessGold;
+}
+
+.clear_both {
+    clear: both;
+    line-height: 1px;
+}
+
+/*Calculating size*/
+
+/*.photos{
+    background-color: #555;
+}*/
+
+
+
+/* Vertical Screens */
+
+@media screen and (min-height: 50px) and (max-height: 520px) {
+    .title {
+        background-image: url(../img/title_small.png);
+    }
+
+ }
+@media screen and (min-height: 521px) and (max-height: 700px) {
+    .title {
+        background-image: url(../img/title_medium.png);
+    }
+
+ }
+@media screen and (min-height: 701px) {
+    .title {
+        background-image: url(../img/title_large.png);
+    }
+
+ }
+
+/* Horizontal Screens */
+
+@media screen and (min-width: 50px) and (max-width: 500px) { 
+    .title {
+        background-image: url(../img/title_small.png);
+    }
+    body{
+        padding: 5px 0px 0px 5px;
+    }
+    .gallery{
+        width: auto;
+        margin-left: 35px;
+    }
+    .gallery .sorting span{
+        display: block;
+        color: @brightGold;
+        padding: 0px 0px 20px 0px;
+    }
+    .gallery .sorting a{
+        display: block;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 960px) {
+    .title {
+        background-image: url(../img/title_medium.png);
+    }
+    .gallery .sorting span {
+        display: block;
+        padding: 0px 0px 20px 0px;
+    }
+    .gallery .sorting a {
+        display: block;
+        width: 35%;
+        float: left;
+        margin-bottom: 5px;
+    }
+ }
+ 
+@media screen and (min-width: 961px) {
+    .title {
+        background-image: url(../img/title_large.png);
+    }
+    .gallery .sorting span {
+        padding: 0px 20px 0px 0px;
+    }
+ }
+/* Gallery Sections CSS Scripts ends here */
+
+
+
+
+
+
+
